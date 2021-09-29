@@ -4,34 +4,88 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>100</x>
-      <y>240</y>
-      <w>270</w>
-      <h>150</h>
+      <x>150</x>
+      <y>70</y>
+      <w>220</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 -
-- idZalogowanegoUzytkownika - int
-- idOstatniegoAdresata - int
-- idUsunietegoAdresata - int 
+- UzytkownikManager:UzytkownikManager
 -
--rejestracjaUzytkownika(): void
--logowanieUzytkownika(): int</panel_attributes>
+ksiazkaAdresowa()
+-</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>390</x>
-      <y>230</y>
-      <w>170</w>
-      <h>100</h>
+      <x>530</x>
+      <y>50</y>
+      <w>540</w>
+      <h>430</h>
+    </coordinates>
+    <panel_attributes>UzytkownikManager
+-
+-idZalogowanegoUzytkownika - int
+-&lt;Uzytkownik&gt; uzytkownicy - vector
+-
++rejestracjaUzytkownika(): void
++logowanieUzytkownika(): int
++wypiszWszystkichUzytkownikow(): void
++wczytajUzytkownikowZPliku(): void
+-podajDaneNowegoUzytkownika(): Uzytkownik
+-pobierzIdNowegoUzytkownika(): int
+-czyIstniejeLogin (): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>130</x>
+      <y>330</y>
+      <w>240</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>Uzytkownik
 -
-- id - int
-- login - string
-- haslo - string</panel_attributes>
+-id - int
+-login - string
+-haslo - string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>530</x>
+      <y>500</y>
+      <w>560</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>PlikZUzytkownikami
+-
+-nazwaPlikuZUzytkownikami - string
+-fstream:PlikTekstowy
+-
++PlikZUzytkownikami(): 
++dopiszUzytkownikaDoPliku(): void
++wczytajUzytkownikowZPliku(): void
+-czyPlikTekstowyJestPusty(): bool
+-zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(): string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1080</x>
+      <y>40</y>
+      <w>240</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>MetodyPomocnicze
+-
++zamienIntNaString(): string
+</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
