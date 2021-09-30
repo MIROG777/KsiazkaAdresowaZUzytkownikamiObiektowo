@@ -18,6 +18,7 @@ class UzytkownikManager
     int idZalogowanegoUzytkownika;
     vector <Uzytkownik> uzytkownicy;
 public:
+    UzytkoiwnikMabager (string nazwaPlikuZUzytkownikami) : PlikZUzytkownikami(nazwaPlikuZUzytkownikami){};
     void rejestracjaUzytkownika();
     int logowanieUzytkownika();
     Uzytkownik podajDaneNowegoUzytkownika();
