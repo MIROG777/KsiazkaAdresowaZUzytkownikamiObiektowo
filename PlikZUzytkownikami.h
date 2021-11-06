@@ -17,13 +17,13 @@ class PlikZUzytkownikami
 
 
 public:
-    PlikZUzytkownikami(string NAZWAPLIKUZUZYTKOWNIKAMI) : nazwaPlikuZUzytkownikami("Uzytkownicy.txt"){};
+    PlikZUzytkownikami(string NAZWAPLIKUZUZYTKOWNIKAMI) : nazwaPlikuZUzytkownikami(NAZWAPLIKUZUZYTKOWNIKAMI){};
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
     string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
-    vector wczytajUzytkownikowZPliku();
+   vector <Uzytkownik> wczytajUzytkownikowZPliku();
 
 private:
-    bool czyPlikTekstowyJestPusty();
+    bool czyPlikTekstowyJestPusty(fstream &plikTekstowy);
     Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
 
 };

@@ -8,7 +8,7 @@
 using namespace std;
 class KsiazkaAdresowa
 {
-    uzytkownikManager uzytkownikManager;
+    UzytkownikManager uzytkownikManager;
 
 
 public:

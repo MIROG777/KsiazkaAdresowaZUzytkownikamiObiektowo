@@ -6,15 +6,48 @@
 	<iostream>
 	<fstream>
 
-1631610837 source:d:\projekt_przyszly_programista\ksiazkaadresowaobiektowo\ksiazkaadresowaobiektowo\main.cpp
+1632983155 source:d:\projekt_przyszly_programista\ksiazkaadresowaobiektowo\ksiazkaadresowaobiektowo\main.cpp
 	<iostream>
 	"KsiazkaAdresowa.h"
 
-1631658450 d:\projekt_przyszly_programista\ksiazkaadresowaobiektowo\ksiazkaadresowaobiektowo\ksiazkaadresowa.h
+1633384025 d:\projekt_przyszly_programista\ksiazkaadresowaobiektowo\ksiazkaadresowaobiektowo\ksiazkaadresowa.h
+	<iostream>
+	"UzytkownikManager.h"
+
+1633294310 source:d:\projekt_przyszly_programista\ksiazkaadresowaobiektowo\ksiazkaadresowaobiektowo\metodypomocnicze.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	"MetodyPomocnicze.h"
+
+1633294312 d:\projekt_przyszly_programista\ksiazkaadresowaobiektowo\ksiazkaadresowaobiektowo\metodypomocnicze.h
+	<iostream>
+	<sstream>
+	"UZytkownik.h"
+
+1633296640 source:d:\projekt_przyszly_programista\ksiazkaadresowaobiektowo\ksiazkaadresowaobiektowo\plikzuzytkownikami.cpp
+	"PlikZUzytkownikami.h"
+
+1633383626 d:\projekt_przyszly_programista\ksiazkaadresowaobiektowo\ksiazkaadresowaobiektowo\plikzuzytkownikami.h
+	<iostream>
+	<vector>
+	<fstream>
+	<cstdlib>
+	"UZytkownik.h"
+	"MetodyPomocnicze.h"
+
+1633555259 d:\projekt_przyszly_programista\ksiazkaadresowaobiektowo\ksiazkaadresowaobiektowo\uzytkownikmanager.h
 	<iostream>
 	<windows.h>
 	<vector>
 	<algorithm>
 	<sstream>
-	"UZytkownik.h"
+	<fstream>
+	"Uzytkownik.h"
+	"PlikZUzytkownikami.h"
+	"MetodyPomocnicze.h"
+
+1633384155 source:d:\projekt_przyszly_programista\ksiazkaadresowaobiektowo\ksiazkaadresowaobiektowo\ksiazkaadresowa.cpp
+	"KsiazkaAdresowa.h"
+	"UzytkownikManager.h"
 

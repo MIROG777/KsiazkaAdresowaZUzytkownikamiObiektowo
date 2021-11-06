@@ -27,7 +27,7 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
        cout<< "Nie udalo sie otworzyc pliku "<<nazwaPlikuZUzytkownikami<<" i zapisac w nim danych.";
    }
 }
-bool PlikZUzytkownikami::czyPlikTekstowyJestPusty()
+bool PlikZUzytkownikami::czyPlikTekstowyJestPusty(fstream &plikTekstowy)
 {
     fstream plikTesktowy;
 plikTekstowy.seekg(0, ios::end);
@@ -40,13 +40,13 @@ string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowym
 {
 
 string liniaZDanymiUzytkownika = "";
-liniaZDanymiUzytkownika = Metodypomocnicze::konwersjaIntNaString(uzytkownik.pobierzID())+'|';
+liniaZDanymiUzytkownika = MetodyPomocnicze::konwersjaIntNaString(uzytkownik.pobierzId())+'|';
 liniaZDanymiUzytkownika = uzytkownik.pobierzLogin()+'|';
 liniaZDanymiUzytkownika = uzytkownik.pobierzHaslo() + '|';
 return liniaZDanymiUzytkownika;
 
 }
-vector PlikZUzytkownikami::wczytajUzytkownikowZPliku();
+vector <Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku()
 {
     Uzytkownik uzytkownik;
     vector <Uzytkownik> uzytkownicy;

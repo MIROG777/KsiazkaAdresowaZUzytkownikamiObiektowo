@@ -6,10 +6,10 @@ using namespace std;
 
 void KsiazkaAdresowa::rejestracjaUzytkownika()
 {
-  UzytkownikManager.rejestracjaUzytkownika();
+  uzytkownikManager.rejestracjaUzytkownika();
 }
 void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
 {
-    UzytkownikManager.wypiszWszystkichUzytkownikow;
+    uzytkownikManager.wypiszWszystkichUzytkownikow();
 }
 
