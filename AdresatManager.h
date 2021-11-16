@@ -20,6 +20,7 @@ class AdresatManager
     vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
 public:
+    AdresatManager (string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami){};
     void dodanieAdresata();
     Adresat podajDaneNowegoAdresata();
     void wypiszWszystkichAdresatow();

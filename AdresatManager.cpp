@@ -13,6 +13,7 @@
 
 using namespace std;
 
+
 void AdresatManager::wypiszWszystkichAdresatow()
 {
     for(int i=0; i<adresaci.size(); i++)

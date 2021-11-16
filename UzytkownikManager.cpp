@@ -94,7 +94,7 @@ void UzytkownikManager::wczytajUzytkownikowZPliku()
 }
 int UzytkownikManager::logowanieUzytkownika()
 {
-
+    AdresatManager adresatManager("Adresaci.txt");
     string login = "", haslo = "";
     int iloscProb = 0, liczebnikMiejscujacy=0;
     bool zmiennaInformujacaOZalogowaniu=0, zmiennaInformujacaOPoprawnymLoginie=0;
@@ -128,6 +128,7 @@ int UzytkownikManager::logowanieUzytkownika()
                 zmiennaInformujacaOZalogowaniu=1;
                 adresatManager.wczytajAdresatowZPliku();
                 return idZalogowanegoUzytkownika;
+                break;
             }
             else
             {
@@ -145,7 +146,7 @@ int UzytkownikManager::logowanieUzytkownika()
 void UzytkownikManager::zmianaHaslaUzytkownika()
 {
     string stareHaslo, noweHaslo, noweHasloPowtorzenie;
-    int iloscProb=0, i=0,zmiennaPorzadkowZalogowanegoUzytkownika;
+    int iloscProb=0,zmiennaPorzadkowZalogowanegoUzytkownika;
     bool zmiennaInformujacaOZmianieHasla=0;
     if (idZalogowanegoUzytkownika!=0)
     {
@@ -247,14 +248,17 @@ int UzytkownikManager::pobierzIdZalogowanegoUzytkownika()
 }
 void UzytkownikManager::wypiszWszystkichAdresatow()
 {
+    AdresatManager adresatManager("Adresaci.txt");
     adresatManager.wypiszWszystkichAdresatow();
 }
 void UzytkownikManager::dodanieAdresata()
 {
+    AdresatManager adresatManager("Adresaci.txt");
     adresatManager.dodanieAdresata();
 }
 void UzytkownikManager::wczytajAdresatowZPliku()
 {
+    AdresatManager adresatManager("Adresaci.txt");
     adresatManager.wczytajAdresatowZPliku();
 }
 
