@@ -11,6 +11,8 @@
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
 #include "MetodyPomocnicze.h"
+#include "Uzytkownik.h"
+#include "UzytkownikManager.h"
 
 using namespace std;
 
@@ -19,6 +21,7 @@ class AdresatManager
     int idWybranegoAdresata;
     vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
+    UzytkownikManager uzytkownikManager;
 public:
     AdresatManager (string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami){};
     void dodanieAdresata();

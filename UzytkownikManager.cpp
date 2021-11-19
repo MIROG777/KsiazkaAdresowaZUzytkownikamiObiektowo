@@ -92,55 +92,37 @@ void UzytkownikManager::wczytajUzytkownikowZPliku()
 {
     uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 }
-int UzytkownikManager::logowanieUzytkownika()
+void UzytkownikManager::logowanieUzytkownika()
 {
-    AdresatManager adresatManager("Adresaci.txt");
     string login = "", haslo = "";
-    int iloscProb = 0, liczebnikMiejscujacy=0;
-    bool zmiennaInformujacaOZalogowaniu=0, zmiennaInformujacaOPoprawnymLoginie=0;
+    int iloscProb = 0;
+    bool zmiennaInformujacaOZalogowaniu=0;
 
 
-    while(iloscProb!=3 || zmiennaInformujacaOZalogowaniu==0)
+    while(iloscProb!=3 && zmiennaInformujacaOZalogowaniu==0)
     {
         cout << "Podaj Login: ";
         cin >> login;
         cout << "Podaj Haslo: ";
         cin >> haslo;
-        for (int i = 0; i <= uzytkownicy.size(); i++)
+        for (int i = 0; i < uzytkownicy.size(); i++)
         {
-            if (login == uzytkownicy[i].pobierzLogin())
+            if (login == uzytkownicy[i].pobierzLogin() && haslo==uzytkownicy[i].pobierzHaslo())
             {
-                zmiennaInformujacaOPoprawnymLoginie = 1;
-                liczebnikMiejscujacy=i;
+                uzytkownikManager.ustawIdZalogowanegoUzytkownika(uzytkownicy[i].pobierzId())
+                zmiennaInformujacaOZalogowaniu=1;
             }
         }
-        if ( zmiennaInformujacaOPoprawnymLoginie == 0)
+        if ( zmiennaInformujacaOZalogowaniu == 0)
         {
             iloscProb++;
             cout << "Bledne dane. Proba "<<iloscProb<< " z 3."<<endl;
         }
-        else
-        {
-            if ( haslo == uzytkownicy[liczebnikMiejscujacy].pobierzHaslo() )
-            {
-                idZalogowanegoUzytkownika = uzytkownicy[liczebnikMiejscujacy].pobierzId();
-                cout << "Uzytkownik "<< uzytkownicy[liczebnikMiejscujacy].pobierzLogin()<<" O numerze ID " << uzytkownicy[liczebnikMiejscujacy].pobierzId()<<" zostal zalogowany"<<endl;
-                zmiennaInformujacaOZalogowaniu=1;
-                adresatManager.wczytajAdresatowZPliku();
-                return idZalogowanegoUzytkownika;
-                break;
-            }
-            else
-            {
-                iloscProb++;
-                cout << "Bledne dane. Proba "<<iloscProb<< " z 3."<<endl;
-            }
-        }
+
     }
     if (iloscProb==3)
     {
-        cout << "Nie udalo sie zalogowac"<<endl;
-        return 0;
+        cout << "Nie udalo sie zalogowac Uzytkownika"<<endl;
     }
 }
 void UzytkownikManager::zmianaHaslaUzytkownika()
@@ -242,24 +224,14 @@ void UzytkownikManager::wylogowanieUzytkownika()
         }
     }
 }
+
+void UzytkownikManager::ustawIdZalogowanegoUzytkownika(int idUzytkownika)
+{
+    idZalogowanegoUzytkownika=idUzytkownika;
+}
 int UzytkownikManager::pobierzIdZalogowanegoUzytkownika()
 {
     return idZalogowanegoUzytkownika;
-}
-void UzytkownikManager::wypiszWszystkichAdresatow()
-{
-    AdresatManager adresatManager("Adresaci.txt");
-    adresatManager.wypiszWszystkichAdresatow();
-}
-void UzytkownikManager::dodanieAdresata()
-{
-    AdresatManager adresatManager("Adresaci.txt");
-    adresatManager.dodanieAdresata();
-}
-void UzytkownikManager::wczytajAdresatowZPliku()
-{
-    AdresatManager adresatManager("Adresaci.txt");
-    adresatManager.wczytajAdresatowZPliku();
 }
 
 

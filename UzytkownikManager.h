@@ -24,21 +24,19 @@ class UzytkownikManager
 public:
     UzytkownikManager (string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
     void rejestracjaUzytkownika();
-    int logowanieUzytkownika();
+    void logowanieUzytkownika();
     void zmianaHaslaUzytkownika();
     void wylogowanieUzytkownika();
     Uzytkownik podajDaneNowegoUzytkownika();
     void wypiszWszystkichUzytkownikow();
-    void wypiszWszystkichAdresatow();
-    void dodanieAdresata();
-    void wczytajAdresatowZPliku();
     void wczytajUzytkownikowZPliku();
     string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami (Uzytkownik uzytkownik);
+    void ustawIdZalogowanegoUzytkownika(int idUzytkownika);
+    int pobierzIdZalogowanegoUzytkownika();
 private:
 
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin (string login);
-    int pobierzIdZalogowanegoUzytkownika();
 
 };
 #endif

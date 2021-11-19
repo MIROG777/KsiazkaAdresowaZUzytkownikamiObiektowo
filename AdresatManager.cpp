@@ -76,7 +76,7 @@ int AdresatManager::pobierzIdNowegoAdresata()
 }
 int AdresatManager::pobierzIdodUzytkownika()
 {
-    return adresaci.back().pobierzIdOdUzytkownika();
+    return uzytkownikManager.pobierzIdZalogowanegoUzytkownika();
 }
 string AdresatManager::zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(Adresat adresat)
 {

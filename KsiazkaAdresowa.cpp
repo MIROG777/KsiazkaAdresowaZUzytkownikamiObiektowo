@@ -15,7 +15,7 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
 }
 int KsiazkaAdresowa::logowanieUzytkownika()
 {
-    return uzytkownikManager.logowanieUzytkownika();
+    uzytkownikManager.logowanieUzytkownika();
 }
 void KsiazkaAdresowa::zmianaHaslaUzytkownika()
 {
@@ -27,14 +27,14 @@ void KsiazkaAdresowa::wylogowanieUzytkownika()
 }
 void KsiazkaAdresowa::dodanieAdresata()
 {
-    uzytkownikManager.dodanieAdresata();
+    adresatManager.dodanieAdresata();
 }
 void KsiazkaAdresowa::wypiszWszystkichAdresatow()
 {
-    uzytkownikManager.wypiszWszystkichAdresatow();
+    adresatManager.wypiszWszystkichAdresatow();
 }
 void KsiazkaAdresowa::wczytajAdresatowZPliku()
 {
-    uzytkownikManager.wczytajAdresatowZPliku();
+    adresatManager.wczytajAdresatowZPliku();
 }
 
