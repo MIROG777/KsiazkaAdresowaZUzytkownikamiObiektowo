@@ -108,7 +108,7 @@ void UzytkownikManager::logowanieUzytkownika()
             if (login == uzytkownicy[i].pobierzLogin() && haslo==uzytkownicy[i].pobierzHaslo())
             {
 
-                UzytkownikManager.ustawIdZalogowanegoUzytkownika(uzytkownicy[i].pobierzId())
+                ustawIdZalogowanegoUzytkownika(uzytkownicy[i].pobierzId());
                 zmiennaInformujacaOZalogowaniu=1;
             }
         }

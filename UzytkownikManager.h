@@ -21,7 +21,6 @@ class UzytkownikManager
     int idZalogowanegoUzytkownika;
     vector <Uzytkownik> uzytkownicy;
     PlikZUzytkownikami plikZUzytkownikami;
-    UzytkownikManager uzytkownikManager;
 public:
     UzytkownikManager (string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
     void rejestracjaUzytkownika();
@@ -34,9 +33,10 @@ public:
     string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami (Uzytkownik uzytkownik);
     void ustawIdZalogowanegoUzytkownika(int idUzytkownika);
     int pobierzIdZalogowanegoUzytkownika();
+
 private:
 
-    int pobierzIdNowegoUzytkownika();
+int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin (string login);
 
 };

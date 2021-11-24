@@ -7,7 +7,7 @@ void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
 {
     fstream plikTekstowy;
     string liniaZDanymiAdresata = "";
-    plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::app);
+    plikTekstowy.open("Adresaci", ios::app);
     if (plikTekstowy.good()==true)
     {
         liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(adresat);
@@ -20,6 +20,7 @@ void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
         {
             plikTekstowy<<endl<<liniaZDanymiAdresata;
         }
+        cout<< "Adresat dodany pomyslnie!"<<endl;
         plikTekstowy.close();
     }
     else

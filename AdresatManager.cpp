@@ -34,7 +34,6 @@ void AdresatManager:: dodanieAdresata(int idZalogowanegoUzytkownika)
 
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
-    cout << endl << "Adresat zostal dodany pomyslnie" << endl << endl;
     system("pause");
 
 }
@@ -62,6 +61,8 @@ Adresat AdresatManager::podajDaneNowegoAdresata( int idZalogowanegoUzytkownika)
     cin.ignore();
     getline(cin,adres);
     adresat.ustawAdres(adres);
+    cin >> email;
+    adresat.ustawEmail(email);
     return adresat;
 }
 
