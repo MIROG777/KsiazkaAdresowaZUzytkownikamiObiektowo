@@ -49,7 +49,7 @@ string PlikZAdresatami::zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKresk
     return liniaZDanymiAdresata;
 
 }
-vector <Adresat> PlikZAdresatami::wczytajAdresatowZPliku()
+vector <Adresat> PlikZAdresatami::wczytajAdresatowZPliku(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
     vector <Adresat> adresaci;
@@ -62,15 +62,18 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZPliku()
     {
         while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
         {
-            adresat = pobierzDaneAdresata(daneJednegoAdresataOddzielonePionowymiKreskami);
-            adresaci.push_back(adresat);
+            adresat = pobierzDaneAdresata(daneJednegoAdresataOddzielonePionowymiKreskami, idZalogowanegoUzytkownika );
+            if (adresat.pobierzIdOdUzytkownika()==idZalogowanegoUzytkownika)
+            {
+                adresaci.push_back(adresat);
+            }
         }
 
     }
     plikTekstowy.close();
     return adresaci;
 }
-Adresat PlikZAdresatami::pobierzDaneAdresata(string daneJednegoAdresataOddzielonePionowymiKreskami)
+Adresat PlikZAdresatami::pobierzDaneAdresata(string daneJednegoAdresataOddzielonePionowymiKreskami, int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
     string pojedynczaDanaAdresata = "";

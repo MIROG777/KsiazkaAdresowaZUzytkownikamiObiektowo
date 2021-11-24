@@ -7,10 +7,8 @@
 #include <fstream>
 
 #include "UzytkownikManager.h"
-#include "AdresatManager.h"
 #include "MetodyPomocnicze.h"
 #include "PlikZUzytkownikami.h"
-#include "PlikZAdresatami.h"
 
 using namespace std;
 
@@ -109,7 +107,8 @@ void UzytkownikManager::logowanieUzytkownika()
         {
             if (login == uzytkownicy[i].pobierzLogin() && haslo==uzytkownicy[i].pobierzHaslo())
             {
-                uzytkownikManager.ustawIdZalogowanegoUzytkownika(uzytkownicy[i].pobierzId())
+
+                UzytkownikManager.ustawIdZalogowanegoUzytkownika(uzytkownicy[i].pobierzId())
                 zmiennaInformujacaOZalogowaniu=1;
             }
         }

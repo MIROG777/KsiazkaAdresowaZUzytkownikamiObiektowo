@@ -14,21 +14,21 @@
 using namespace std;
 
 
-void AdresatManager::wypiszWszystkichAdresatow()
+void AdresatManager::wypiszWszystkichAdresatow(int idZalogowanegoUzytkownika)
 {
     for(int i=0; i<adresaci.size(); i++)
     {
-        cout << adresaci[i].pobierzId() <<endl;
-        cout << adresaci[i].pobierzIdOdUzytkownika() <<endl;
-        cout << adresaci[i].pobierzImie() <<endl;
-        cout << adresaci[i].pobierzNazwisko() <<endl;
-        cout << adresaci[i].pobierzAdres() <<endl;
-        cout << adresaci[i].pobierzEmail() <<endl;
+            cout << adresaci[i].pobierzIdOdUzytkownika() <<endl;
+            cout << adresaci[i].pobierzId() <<endl;
+            cout << adresaci[i].pobierzImie() <<endl;
+            cout << adresaci[i].pobierzNazwisko() <<endl;
+            cout << adresaci[i].pobierzAdres() <<endl;
+            cout << adresaci[i].pobierzEmail() <<endl;
     }
 }
-void AdresatManager:: dodanieAdresata()
+void AdresatManager:: dodanieAdresata(int idZalogowanegoUzytkownika)
 {
-    Adresat adresat = podajDaneNowegoAdresata();
+    Adresat adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika);
 
     adresaci.push_back(adresat);
 
@@ -39,12 +39,12 @@ void AdresatManager:: dodanieAdresata()
 
 }
 
-Adresat AdresatManager::podajDaneNowegoAdresata()
+Adresat AdresatManager::podajDaneNowegoAdresata( int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
 
     adresat.ustawId(pobierzIdNowegoAdresata());
-    adresat.ustawIdOdUzytkownika(pobierzIdodUzytkownika());
+    adresat.ustawIdOdUzytkownika(idZalogowanegoUzytkownika);
     string imie;
     string nazwisko;
     string adres;
@@ -74,10 +74,6 @@ int AdresatManager::pobierzIdNowegoAdresata()
     else
         return adresaci.back().pobierzId() + 1;
 }
-int AdresatManager::pobierzIdodUzytkownika()
-{
-    return uzytkownikManager.pobierzIdZalogowanegoUzytkownika();
-}
 string AdresatManager::zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(Adresat adresat)
 {
     string liniaZDanymiAdresata="";
@@ -90,9 +86,9 @@ string AdresatManager::zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreska
 
     return liniaZDanymiAdresata;
 }
-void AdresatManager::wczytajAdresatowZPliku()
+void AdresatManager::wczytajAdresatowZPliku(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
 {
-    adresaci = plikZAdresatami.wczytajAdresatowZPliku();
+    adresaci = plikZAdresatami.wczytajAdresatowZPliku("Adresaci", idZalogowanegoUzytkownika);
     /*cout <<"Ilosc Adresatow: "<< uzytkownicy.size()<<"Wypisanie Adresatow w metodzie wczytajAdresatowZPliku w klasie AdresatManager"<<endl;
     for (int i=0; i<=uzytkownicy.size();i++)
     {

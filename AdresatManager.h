@@ -21,19 +21,15 @@ class AdresatManager
     int idWybranegoAdresata;
     vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
-    UzytkownikManager uzytkownikManager;
 public:
-    AdresatManager (string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami){};
-    void dodanieAdresata();
-    Adresat podajDaneNowegoAdresata();
-    void wypiszWszystkichAdresatow();
-    void wczytajAdresatowZPliku();
+    void dodanieAdresata(int idZalogowanegoUzytkownika);
+    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
+    void wypiszWszystkichAdresatow(int idZalogowanegoUzytkownika);
+    void wczytajAdresatowZPliku(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika);
     string zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami (Adresat adresat);
 private:
 
     int pobierzIdNowegoAdresata();
-    int pobierzIdodUzytkownika();
-
 };
 #endif
 

@@ -27,7 +27,7 @@ void KsiazkaAdresowa::wylogowanieUzytkownika()
 }
 void KsiazkaAdresowa::dodanieAdresata()
 {
-    adresatManager.dodanieAdresata();
+    adresatManager.dodanieAdresata(uzytkownikManager.pobierzIdNowegoUzytkownika());
 }
 void KsiazkaAdresowa::wypiszWszystkichAdresatow()
 {
@@ -35,6 +35,6 @@ void KsiazkaAdresowa::wypiszWszystkichAdresatow()
 }
 void KsiazkaAdresowa::wczytajAdresatowZPliku()
 {
-    adresatManager.wczytajAdresatowZPliku();
+    adresatManager.wczytajAdresatowZPliku("Adresaci", uzytkownikManager.pobierzIdNowegoUzytkownika());
 }
 

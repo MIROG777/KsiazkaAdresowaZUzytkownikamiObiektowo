@@ -20,11 +20,11 @@ public:
     PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI) {};
     void dopiszAdresataDoPliku(Adresat adresat);
     string zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(Adresat adresat);
-    vector <Adresat> wczytajAdresatowZPliku();
+    vector <Adresat> wczytajAdresatowZPliku(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika);
 
 private:
     bool czyPlikTekstowyJestPusty(fstream &plikTekstowy);
-    Adresat pobierzDaneAdresata(string daneJednegoAdresataOddzielonePionowymiKreskami);
+    Adresat pobierzDaneAdresata(string daneJednegoAdresataOddzielonePionowymiKreskami, int idZalogowanegoUzytkownika);
 
 };
 #endif
