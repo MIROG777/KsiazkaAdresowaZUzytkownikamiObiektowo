@@ -89,7 +89,7 @@ string AdresatManager::zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreska
 }
 void AdresatManager::wczytajAdresatowZPliku(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
 {
-    adresaci = plikZAdresatami.wczytajAdresatowZPliku("Adresaci", idZalogowanegoUzytkownika);
+    adresaci = plikZAdresatami.wczytajAdresatowZPliku("Adresaci.txt", idZalogowanegoUzytkownika);
     /*cout <<"Ilosc Adresatow: "<< uzytkownicy.size()<<"Wypisanie Adresatow w metodzie wczytajAdresatowZPliku w klasie AdresatManager"<<endl;
     for (int i=0; i<=uzytkownicy.size();i++)
     {

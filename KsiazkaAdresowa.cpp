@@ -27,14 +27,14 @@ void KsiazkaAdresowa::wylogowanieUzytkownika()
 }
 void KsiazkaAdresowa::dodanieAdresata()
 {
-    adresatManager.dodanieAdresata(uzytkownikManager.pobierzIdNowegoUzytkownika());
+    adresatManager.dodanieAdresata(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
 }
 void KsiazkaAdresowa::wypiszWszystkichAdresatow()
 {
-    adresatManager.wypiszWszystkichAdresatow();
+    adresatManager.wypiszWszystkichAdresatow(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
 }
 void KsiazkaAdresowa::wczytajAdresatowZPliku()
 {
-    adresatManager.wczytajAdresatowZPliku("Adresaci", uzytkownikManager.pobierzIdNowegoUzytkownika());
+    adresatManager.wczytajAdresatowZPliku("Adresaci", uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
 }
 

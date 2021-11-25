@@ -57,7 +57,7 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZPliku(string nazwaPlikuZAdres
     fstream plikTekstowy;
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
 
-    plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
+    plikTekstowy.open("Adresaci.txt", ios::in);
 
     if (plikTekstowy.good() == true)
     {

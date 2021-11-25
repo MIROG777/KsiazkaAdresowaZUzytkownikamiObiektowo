@@ -12,8 +12,5 @@ class MetodyPomocnicze
 
 public:
     static string konwersjaIntNaString(int liczba);
-
-
-
 };
 #endif
