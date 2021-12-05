@@ -3,11 +3,11 @@
 using namespace std;
 
 
-void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
+bool PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
 {
     fstream plikTekstowy;
     string liniaZDanymiAdresata = "";
-    plikTekstowy.open("Adresaci", ios::app);
+    plikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::out | ios::app);
     if (plikTekstowy.good()==true)
     {
         liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(adresat);
@@ -22,10 +22,11 @@ void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
         }
         cout<< "Adresat dodany pomyslnie!"<<endl;
         plikTekstowy.close();
+        return true;
     }
     else
     {
-        cout<< "Nie udalo sie otworzyc pliku "<<nazwaPlikuZAdresatami<<" i zapisac w nim danych.";
+        return false;
     }
 }
 bool PlikZAdresatami::czyPlikTekstowyJestPusty(fstream &plikTekstowy)

@@ -22,6 +22,10 @@ void Adresat::ustawNazwisko(string noweNazwisko)
 {
     nazwisko=noweNazwisko;
 }
+void Adresat::ustawNumerTelefonu (string nowyNumerTelefonu)
+{
+    numerTelefonu=nowyNumerTelefonu;
+}
 void Adresat::ustawAdres(string nowyAdres)
 {
     adres=nowyAdres;
@@ -46,6 +50,10 @@ string Adresat::pobierzImie()
 string Adresat::pobierzNazwisko()
 {
     return nazwisko;
+}
+string Adresat::pobierzNumerTelefonu()
+{
+    return numerTelefonu;
 }
 string Adresat::pobierzAdres()
 {

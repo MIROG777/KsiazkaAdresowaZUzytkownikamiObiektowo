@@ -3,14 +3,16 @@
 using namespace std;
 
 
-void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
+void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(vector <Uzytkownik> uzytkownicy)
 {
     fstream plikTekstowy;
     string liniaZDanymiUzytkownika = "";
     plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::app);
     if (plikTekstowy.good()==true)
     {
-        liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownik);
+        for(int i=0; i<uzytkownicy.size(); i++)
+        {
+            liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownicy[i]);
 
         if(czyPlikTekstowyJestPusty(plikTekstowy) == true)
         {
@@ -19,6 +21,7 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
         else
         {
             plikTekstowy<<endl<<liniaZDanymiUzytkownika;
+        }
         }
         plikTekstowy.close();
     }
@@ -104,6 +107,13 @@ Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika(string daneJednegoUzytkown
         }
     }
     return uzytkownik;
+}
+void PlikZUzytkownikami::wyczyscPlik()
+{
+    fstream plikTekstowy;
+    fopen (plikTekstowy, "w");
+    plikTekstowy.close();
+
 }
 
 

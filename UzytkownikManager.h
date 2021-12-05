@@ -22,17 +22,21 @@ class UzytkownikManager
     vector <Uzytkownik> uzytkownicy;
     PlikZUzytkownikami plikZUzytkownikami;
 public:
-    UzytkownikManager (string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
+    UzytkownikManager (string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami)
+    {
+        idZalogowanegoUzytkownika=0;
+            uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+    };
     void rejestracjaUzytkownika();
     void logowanieUzytkownika();
     void zmianaHaslaUzytkownika();
     void wylogowanieUzytkownika();
     Uzytkownik podajDaneNowegoUzytkownika();
     void wypiszWszystkichUzytkownikow();
-    void wczytajUzytkownikowZPliku();
     string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami (Uzytkownik uzytkownik);
     void ustawIdZalogowanegoUzytkownika(int idUzytkownika);
     int pobierzIdZalogowanegoUzytkownika();
+    bool czyUzytkownikJestZalogowany();
 
 private:
 

@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <sstream>
 #include <fstream>
+#include <string>
 
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
@@ -18,18 +19,24 @@ using namespace std;
 
 class AdresatManager
 {
-    int idWybranegoAdresata;
+    const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
+    //int idWybranegoAdresata;
     vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
-public:
-    void dodanieAdresata(int idZalogowanegoUzytkownika);
+
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
-    void wypiszWszystkichAdresatow(int idZalogowanegoUzytkownika);
-    void wczytajAdresatowZPliku(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika);
-    string zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami (Adresat adresat);
+    void wyswietlDaneAdresata(Adresat adresat);
+public:
+    AdresatManager(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika) : plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
+    {
+        adresaci=plikZAdresatami.wczytajAdresatowZalogoeanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+    };
+    void dodanieAdresata();
+    void wyswietlWszystkichAdresatow();;
 private:
 
     int pobierzIdNowegoAdresata();
+    string wczytajLinie();
 };
 #endif
 

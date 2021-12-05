@@ -86,10 +86,6 @@ string UzytkownikManager::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymi
 
     return liniaZDanymiUzytkownika;
 }
-void UzytkownikManager::wczytajUzytkownikowZPliku()
-{
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
 void UzytkownikManager::logowanieUzytkownika()
 {
     string login = "", haslo = "";
@@ -124,7 +120,7 @@ void UzytkownikManager::logowanieUzytkownika()
         cout << "Nie udalo sie zalogowac Uzytkownika"<<endl;
     }
 }
-void UzytkownikManager::zmianaHaslaUzytkownika()
+void UzytkownikManager::zmianaHaslaUzytkownika(vector <Uzytkownik> uzytkownicy, int idZalogowanegoUzytkownika)
 {
     string stareHaslo, noweHaslo, noweHasloPowtorzenie;
     int iloscProb=0,zmiennaPorzadkowZalogowanegoUzytkownika;
@@ -160,7 +156,8 @@ void UzytkownikManager::zmianaHaslaUzytkownika()
                     {
                         uzytkownicy[zmiennaPorzadkowZalogowanegoUzytkownika].ustawHaslo(noweHaslo);
                         cout << "Haslo zostalo zmienione"<<endl;
-                        plikZUzytkownikami.dopiszUzytkownikaDoPliku(uzytkownicy[zmiennaPorzadkowZalogowanegoUzytkownika]);
+                        plikZUzytkownikami.wyczyscPlik();
+                        plikZUzytkownikami.dopiszUzytkownikaDoPliku(uzytkownicy);
                         zmiennaInformujacaOZmianieHasla=1;
                         break;
 
@@ -231,6 +228,18 @@ void UzytkownikManager::ustawIdZalogowanegoUzytkownika(int idUzytkownika)
 int UzytkownikManager::pobierzIdZalogowanegoUzytkownika()
 {
     return idZalogowanegoUzytkownika;
+}
+bool czyUzytkownikJestZalogowany()
+{
+    if(idZalogowanegoUzytkownika > 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+
 }
 
 
