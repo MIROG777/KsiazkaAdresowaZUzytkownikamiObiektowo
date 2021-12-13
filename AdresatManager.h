@@ -20,19 +20,20 @@ using namespace std;
 class AdresatManager
 {
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
-    //int idWybranegoAdresata;
     vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
+    MetodyPomocnicze metodyPomocnicze;
 
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
     void wyswietlDaneAdresata(Adresat adresat);
 public:
     AdresatManager(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika) : plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
     {
-        adresaci=plikZAdresatami.wczytajAdresatowZalogoeanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+        adresaci=plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     };
-    void dodanieAdresata();
-    void wyswietlWszystkichAdresatow();;
+    void dodanieAdresata(int idZalogowanegoUzytkownika);
+    void wyswietlWszystkichAdresatow(int idZalogowanegoUzytkownika);
+    string zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(Adresat adresat);
 private:
 
     int pobierzIdNowegoAdresata();

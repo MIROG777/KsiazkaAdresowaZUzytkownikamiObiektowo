@@ -29,7 +29,7 @@ public:
     };
     void rejestracjaUzytkownika();
     void logowanieUzytkownika();
-    void zmianaHaslaUzytkownika();
+    void zmianaHaslaUzytkownika(vector <Uzytkownik> uzytkownicy, int idZalogowanegoUzytkownika);
     void wylogowanieUzytkownika();
     Uzytkownik podajDaneNowegoUzytkownika();
     void wypiszWszystkichUzytkownikow();

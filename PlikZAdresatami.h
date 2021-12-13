@@ -20,7 +20,7 @@ public:
     PlikZAdresatami(string nazwaPlikuZAdresatami) : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami) {};
     bool dopiszAdresataDoPliku(Adresat adresat);
     string zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(Adresat adresat);
-    vector <Adresat> wczytajAdresatowZalogoeanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+    vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
 
 private:
     bool czyPlikTekstowyJestPusty(fstream &plikTekstowy);

@@ -51,7 +51,7 @@ string PlikZAdresatami::zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKresk
     return liniaZDanymiAdresata;
 
 }
-vector <Adresat> PlikZAdresatami::wczytajAdresatowZPliku(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
+/*vector <Adresat> PlikZAdresatami::wczytajAdresatowZPliku(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
     vector <Adresat> adresaci;
@@ -74,7 +74,7 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZPliku(string nazwaPlikuZAdres
     }
     plikTekstowy.close();
     return adresaci;
-}
+}*/
 Adresat PlikZAdresatami::pobierzDaneAdresata(string daneJednegoAdresataOddzielonePionowymiKreskami, int idZalogowanegoUzytkownika)
 {
     Adresat adresat;

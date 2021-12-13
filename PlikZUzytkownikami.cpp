@@ -108,12 +108,12 @@ Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika(string daneJednegoUzytkown
     }
     return uzytkownik;
 }
-void PlikZUzytkownikami::wyczyscPlik()
+/*void PlikZUzytkownikami::wyczyscPlik()
 {
     fstream plikTekstowy;
     fopen (plikTekstowy, "w");
     plikTekstowy.close();
 
-}
+}*/
 
 

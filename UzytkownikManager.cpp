@@ -27,7 +27,7 @@ void UzytkownikManager:: rejestracjaUzytkownika()
 
     uzytkownicy.push_back(uzytkownik);
 
-    plikZUzytkownikami.dopiszUzytkownikaDoPliku(uzytkownik);
+    plikZUzytkownikami.dopiszUzytkownikaDoPliku(uzytkownicy);
 
     cout << endl << "Konto zalozono pomyslnie" << endl << endl;
     system("pause");
@@ -229,9 +229,9 @@ int UzytkownikManager::pobierzIdZalogowanegoUzytkownika()
 {
     return idZalogowanegoUzytkownika;
 }
-bool czyUzytkownikJestZalogowany()
+bool UzytkownikManager::czyUzytkownikJestZalogowany()
 {
-    if(idZalogowanegoUzytkownika > 0)
+    if(pobierzIdZalogowanegoUzytkownika() > 0)
     {
         return true;
     }
