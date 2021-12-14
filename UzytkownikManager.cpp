@@ -156,7 +156,7 @@ void UzytkownikManager::zmianaHaslaUzytkownika(vector <Uzytkownik> uzytkownicy, 
                     {
                         uzytkownicy[zmiennaPorzadkowZalogowanegoUzytkownika].ustawHaslo(noweHaslo);
                         cout << "Haslo zostalo zmienione"<<endl;
-                        plikZUzytkownikami.wyczyscPlik();
+                        //plikZUzytkownikami.wyczyscPlik();
                         plikZUzytkownikami.dopiszUzytkownikaDoPliku(uzytkownicy);
                         zmiennaInformujacaOZmianieHasla=1;
                         break;

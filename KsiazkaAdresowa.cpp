@@ -71,7 +71,7 @@ void KsiazkaAdresowa::wczytajMenu()
             cout<<"<<<<<<MENU UZYTKOWNIKOW>>>>>>>"<<endl;
             cout<<"1. Rejestracja Uzytkownika " <<endl;
             cout<<"2. Logowanie Uzytkownika " <<endl;
-            cout<<"Wyjdz"<<endl;
+            cout<<"9. Wyjdz"<<endl;
             cout<< "Wybierz opcje: "<<endl;
             wybor = wybierzOpcjeZMenuGlownego();
 
@@ -96,7 +96,7 @@ void KsiazkaAdresowa::wczytajMenu()
         {
             cout<<"<<<<<<MENU ADRESATOW>>>>>>>"<<endl;
             cout<<"1. Dodaj Adresata " <<endl;
-            cout<<"2. Wyswietls wsztstkich adresatow"<<endl;
+            cout<<"2. Wyswietl wszystkich adresatow"<<endl;
             cout<<"9. Wyjdz"<<endl;
             cout<< "Wybierz opcje: "<<endl;
             wybor = wybierzOpcjeZMenuGlownego();

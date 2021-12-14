@@ -27,13 +27,15 @@ void AdresatManager::wyswietlWszystkichAdresatow(int idZalogowanegoUzytkownika)
             cout << adresaci[i].pobierzNazwisko() <<endl;
             cout << adresaci[i].pobierzAdres() <<endl;
             cout << adresaci[i].pobierzEmail() <<endl;
+            cout << "Wyswietlono adresatow"<< endl;
+            system("PAUSE");
         }
     }
 }
 void AdresatManager:: dodanieAdresata(int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
-    system("cls");
+    //system("cls");
     cout << "<<<<<<<<<<<<DODAWANIE NOWEGO ADRESATA>>>>>>>>>>>>>"<<endl<<endl;
     adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika);
     adresaci.push_back(adresat);
@@ -55,7 +57,9 @@ Adresat AdresatManager::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
     Adresat adresat;
 string imie, nazwisko,numerTelefonu,email,adres;
     adresat.ustawId(pobierzIdNowegoAdresata());
+    cout<<"Nadano id adresatowi: "<<adresat.pobierzId()<<endl;
     adresat.ustawIdOdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+    cout<<"Nadano id od uzytownika adresatowi: "<<adresat.pobierzIdOdUzytkownika()<<endl;
 
     cout << "Podaj imie: ";
     imie=metodyPomocnicze.wczytajLinie();
