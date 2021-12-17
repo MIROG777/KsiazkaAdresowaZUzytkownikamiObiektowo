@@ -16,6 +16,8 @@ string MetodyPomocnicze::konwersjaIntNaString(int liczba)
 }
 string MetodyPomocnicze::wczytajLinie()
 {
+    cin.clear();
+    cin.sync();
     string wejscie = "";
     getline(cin, wejscie);
     return wejscie;
@@ -24,6 +26,7 @@ string MetodyPomocnicze::zamienPierwszaLitereNaWielkaAPozostaleNaMale(string tek
     {
         for(int i=0; i<tekst.length();i++)
         {
+            cout<<"dlugosc tekstu: "<< tekst.length()<<endl;
             if(i=0)
             {
                 if(tekst[i]>=97)

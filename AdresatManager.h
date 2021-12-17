@@ -24,16 +24,17 @@ class AdresatManager
     PlikZAdresatami plikZAdresatami;
     MetodyPomocnicze metodyPomocnicze;
 
-    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
+
     void wyswietlDaneAdresata(Adresat adresat);
 public:
     AdresatManager(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika) : plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
     {
-        adresaci=plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+        adresaci=plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     };
-    void dodanieAdresata(int idZalogowanegoUzytkownika);
-    void wyswietlWszystkichAdresatow(int idZalogowanegoUzytkownika);
+    void dodanieAdresata(int ID_ZALOGOWANEGO_UZYTKOWNIKA);
+    void wyswietlWszystkichAdresatow(int ID_ZALOGOWANEGO_UZYTKOWNIKA);
     string zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(Adresat adresat);
+    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
 private:
 
     int pobierzIdNowegoAdresata();

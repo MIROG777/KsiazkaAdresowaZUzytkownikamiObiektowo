@@ -104,6 +104,9 @@ void KsiazkaAdresowa::wczytajMenu()
             switch (wybor)
             {
             case '1':
+                cout <<"Dodawanie adresata"<<endl;
+                cout<<"Id zalogowanego uzytkownika: "<<uzytkownikManager.pobierzIdZalogowanegoUzytkownika()<<endl;
+                system("PAUSE");
                 adresatManager->dodanieAdresata(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
                 break;
             case '2':

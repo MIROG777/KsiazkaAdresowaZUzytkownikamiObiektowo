@@ -49,7 +49,7 @@ Uzytkownik UzytkownikManager::podajDaneNowegoUzytkownika()
 {
     Uzytkownik uzytkownik;
 
-    uzytkownik.ustawId(pobierzIdNowegoUzytkownika());
+    uzytkownik.ustawId(pobierzIdNowegoUzytkownika());//
     string login;
     do
     {

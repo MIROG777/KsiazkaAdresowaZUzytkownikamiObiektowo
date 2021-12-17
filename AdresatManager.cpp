@@ -37,6 +37,8 @@ void AdresatManager:: dodanieAdresata(int idZalogowanegoUzytkownika)
     Adresat adresat;
     //system("cls");
     cout << "<<<<<<<<<<<<DODAWANIE NOWEGO ADRESATA>>>>>>>>>>>>>"<<endl<<endl;
+    cout<< "Podaj Dane Nowego Adresata, idZalogowanegoUZytkownika: "<< idZalogowanegoUzytkownika<<endl;
+    system("PAUSE");
     adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika);
     adresaci.push_back(adresat);
     if(plikZAdresatami.dopiszAdresataDoPliku(adresat))
@@ -56,9 +58,13 @@ Adresat AdresatManager::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
 string imie, nazwisko,numerTelefonu,email,adres;
+cout<<"ustawID adresata: "<< pobierzIdNowegoAdresata()<<endl;
+system("PAUSE");
     adresat.ustawId(pobierzIdNowegoAdresata());
     cout<<"Nadano id adresatowi: "<<adresat.pobierzId()<<endl;
-    adresat.ustawIdOdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+    cout << "ID Zalogowanego uzytkownika wynosi: "<<idZalogowanegoUzytkownika<<endl;
+    system("PAUSE");
+    adresat.ustawIdOdUzytkownika(idZalogowanegoUzytkownika);
     cout<<"Nadano id od uzytownika adresatowi: "<<adresat.pobierzIdOdUzytkownika()<<endl;
 
     cout << "Podaj imie: ";
@@ -86,10 +92,19 @@ string imie, nazwisko,numerTelefonu,email,adres;
 
 int AdresatManager::pobierzIdNowegoAdresata()
 {
+    //cout << "Wielkosc wektora adresaci: " << adresaci.size() << endl;
+    system("PAUSE");
     if (adresaci.empty() == true)
+        {
+        cout << "Nadano id adresata 1" << endl;
         return 1;
+        }
     else
-        return adresaci.back().pobierzId() + 1;
+        {
+        cout << "Id ostatniego adresata w wektorze: "<<adresaci[adresaci.size()-1].pobierzId()<<endl;
+        system("PAUSE");
+        return adresaci[adresaci.size()-1].pobierzId() + 1;
+        }
 }
 string AdresatManager::zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(Adresat adresat)
 {
