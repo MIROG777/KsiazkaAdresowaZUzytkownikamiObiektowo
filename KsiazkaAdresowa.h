@@ -30,7 +30,7 @@ public:
     int logowanieUzytkownika();
     void zmianaHaslaUzytkownika();
     void wylogowanieUzytkownika();
-    void dodanieAdresata();
+    void dodanieAdresata(int idZalogowanegoUzytkownika);
     void wyswietlWszystkichAdresatow();
     void wczytajMenu();
     char wybierzOpcjeZMenuGlownego();

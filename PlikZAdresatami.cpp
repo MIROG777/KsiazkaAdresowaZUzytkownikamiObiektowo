@@ -40,10 +40,9 @@ bool PlikZAdresatami::czyPlikTekstowyJestPusty(fstream &plikTekstowy)
 }
 string PlikZAdresatami::zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(Adresat adresat)
 {
-
     string liniaZDanymiAdresata = "";
     liniaZDanymiAdresata = MetodyPomocnicze::konwersjaIntNaString(adresat.pobierzIdOdUzytkownika())+'|';
-    liniaZDanymiAdresata = MetodyPomocnicze::konwersjaIntNaString(adresat.pobierzId())+'|';
+    liniaZDanymiAdresata += MetodyPomocnicze::konwersjaIntNaString(adresat.pobierzId())+'|';
     liniaZDanymiAdresata += adresat.pobierzImie()+'|';
     liniaZDanymiAdresata += adresat.pobierzNazwisko() + '|';
     liniaZDanymiAdresata += adresat.pobierzAdres() + '|';

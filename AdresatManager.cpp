@@ -21,24 +21,23 @@ void AdresatManager::wyswietlWszystkichAdresatow(int idZalogowanegoUzytkownika)
     {
         if (adresaci[i].pobierzIdOdUzytkownika()==idZalogowanegoUzytkownika)
         {
-            cout << adresaci[i].pobierzIdOdUzytkownika() <<endl;
-            cout << adresaci[i].pobierzId() <<endl;
-            cout << adresaci[i].pobierzImie() <<endl;
-            cout << adresaci[i].pobierzNazwisko() <<endl;
-            cout << adresaci[i].pobierzAdres() <<endl;
-            cout << adresaci[i].pobierzEmail() <<endl;
-            cout << "Wyswietlono adresatow"<< endl;
-            system("PAUSE");
+            cout << "Id od Uzytkownika: "<<adresaci[i].pobierzIdOdUzytkownika() <<endl;
+            cout << "Id: "<<adresaci[i].pobierzId() <<endl;
+            cout << "Imie: "<<adresaci[i].pobierzImie() <<endl;
+            cout << "Nazwisko: "<<adresaci[i].pobierzNazwisko() <<endl;
+            cout << "Adres: "<<adresaci[i].pobierzAdres() <<endl;
+            cout << "Email: "<<adresaci[i].pobierzEmail() <<endl;
+
         }
     }
+    cout << "Wyswietlono adresatow"<< endl;
+            system("PAUSE");
 }
 void AdresatManager:: dodanieAdresata(int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
     //system("cls");
     cout << "<<<<<<<<<<<<DODAWANIE NOWEGO ADRESATA>>>>>>>>>>>>>"<<endl<<endl;
-    cout<< "Podaj Dane Nowego Adresata, idZalogowanegoUZytkownika: "<< idZalogowanegoUzytkownika<<endl;
-    system("PAUSE");
     adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika);
     adresaci.push_back(adresat);
     if(plikZAdresatami.dopiszAdresataDoPliku(adresat))
@@ -58,15 +57,8 @@ Adresat AdresatManager::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
 string imie, nazwisko,numerTelefonu,email,adres;
-cout<<"ustawID adresata: "<< pobierzIdNowegoAdresata()<<endl;
-system("PAUSE");
     adresat.ustawId(pobierzIdNowegoAdresata());
-    cout<<"Nadano id adresatowi: "<<adresat.pobierzId()<<endl;
-    cout << "ID Zalogowanego uzytkownika wynosi: "<<idZalogowanegoUzytkownika<<endl;
-    system("PAUSE");
     adresat.ustawIdOdUzytkownika(idZalogowanegoUzytkownika);
-    cout<<"Nadano id od uzytownika adresatowi: "<<adresat.pobierzIdOdUzytkownika()<<endl;
-
     cout << "Podaj imie: ";
     imie=metodyPomocnicze.wczytajLinie();
     imie=metodyPomocnicze.zamienPierwszaLitereNaWielkaAPozostaleNaMale(imie);
@@ -92,11 +84,10 @@ system("PAUSE");
 
 int AdresatManager::pobierzIdNowegoAdresata()
 {
-    //cout << "Wielkosc wektora adresaci: " << adresaci.size() << endl;
-    system("PAUSE");
     if (adresaci.empty() == true)
         {
-        cout << "Nadano id adresata 1" << endl;
+            cout << "Nie ma zapisanych adresatow"<<endl;
+            system ("PAUSE");
         return 1;
         }
     else

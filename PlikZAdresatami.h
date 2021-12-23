@@ -13,7 +13,7 @@ using namespace std;
 class PlikZAdresatami
 {
     const string NAZWA_PLIKU_Z_ADRESATAMI;
-    //fstream plikTekstowy;
+    fstream plikTekstowy;
 
 
 public:

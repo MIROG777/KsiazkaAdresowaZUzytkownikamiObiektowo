@@ -24,10 +24,10 @@ string MetodyPomocnicze::wczytajLinie()
 }
 string MetodyPomocnicze::zamienPierwszaLitereNaWielkaAPozostaleNaMale(string tekst)
     {
-        for(int i=0; i<tekst.length();i++)
+        for(int i=0; i<=tekst.length()-1;i++)
         {
-            cout<<"dlugosc tekstu: "<< tekst.length()<<endl;
-            if(i=0)
+
+            if(i==0)
             {
                 if(tekst[i]>=97)
                 {
@@ -42,4 +42,6 @@ string MetodyPomocnicze::zamienPierwszaLitereNaWielkaAPozostaleNaMale(string tek
                 }
             }
         }
+        return tekst;
+
     }

@@ -33,11 +33,11 @@ void KsiazkaAdresowa::wylogowanieUzytkownika()
     delete adresatManager;
     adresatManager = NULL;
 }
-void KsiazkaAdresowa::dodanieAdresata()
+ void KsiazkaAdresowa::dodanieAdresata(int idZalogowanegoUzytkownika)
 {
     if (uzytkownikManager.czyUzytkownikJestZalogowany())
     {
-        adresatManager->dodanieAdresata(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
+        adresatManager->dodanieAdresata(idZalogowanegoUzytkownika);
     }
     else
         {
@@ -72,16 +72,16 @@ void KsiazkaAdresowa::wczytajMenu()
             cout<<"1. Rejestracja Uzytkownika " <<endl;
             cout<<"2. Logowanie Uzytkownika " <<endl;
             cout<<"9. Wyjdz"<<endl;
-            cout<< "Wybierz opcje: "<<endl;
+            cout<< "Wybierz opcje: ";
             wybor = wybierzOpcjeZMenuGlownego();
 
             switch (wybor)
             {
             case '1':
-                uzytkownikManager.rejestracjaUzytkownika();
+                rejestracjaUzytkownika();
                 break;
             case '2':
-                uzytkownikManager.logowanieUzytkownika();
+                logowanieUzytkownika();
                 break;
             case '9':
                 exit(0);
@@ -98,22 +98,19 @@ void KsiazkaAdresowa::wczytajMenu()
             cout<<"1. Dodaj Adresata " <<endl;
             cout<<"2. Wyswietl wszystkich adresatow"<<endl;
             cout<<"9. Wyjdz"<<endl;
-            cout<< "Wybierz opcje: "<<endl;
+            cout<< "Wybierz opcje: ";
             wybor = wybierzOpcjeZMenuGlownego();
 
             switch (wybor)
             {
             case '1':
-                cout <<"Dodawanie adresata"<<endl;
-                cout<<"Id zalogowanego uzytkownika: "<<uzytkownikManager.pobierzIdZalogowanegoUzytkownika()<<endl;
-                system("PAUSE");
-                adresatManager->dodanieAdresata(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
+                dodanieAdresata(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
                 break;
             case '2':
-                adresatManager->wyswietlWszystkichAdresatow(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
+                wyswietlWszystkichAdresatow();
                 break;
             case '9':
-                exit(0);
+                uzytkownikManager.ustawIdZalogowanegoUzytkownika(0);
                 break;
             }
         }
