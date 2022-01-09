@@ -23,25 +23,25 @@ string MetodyPomocnicze::wczytajLinie()
     return wejscie;
 }
 string MetodyPomocnicze::zamienPierwszaLitereNaWielkaAPozostaleNaMale(string tekst)
+{
+    for(int i=0; i<=tekst.length()-1; i++)
     {
-        for(int i=0; i<=tekst.length()-1;i++)
-        {
 
-            if(i==0)
+        if(i==0)
+        {
+            if(tekst[i]>=97)
             {
-                if(tekst[i]>=97)
-                {
-                    tekst[i]=tekst[i]-(97-65);
-                }
-            }
-            else if(i>0)
-            {
-                if(tekst[i]<97)
-                {
-                    tekst[i]=tekst[i]+(97-65);
-                }
+                tekst[i]=tekst[i]-(97-65);
             }
         }
-        return tekst;
-
+        else if(i>0)
+        {
+            if(tekst[i]<97)
+            {
+                tekst[i]=tekst[i]+(97-65);
+            }
+        }
     }
+    return tekst;
+
+}

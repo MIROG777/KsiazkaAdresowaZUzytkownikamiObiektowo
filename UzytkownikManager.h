@@ -25,11 +25,11 @@ public:
     UzytkownikManager (string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami)
     {
         idZalogowanegoUzytkownika=0;
-            uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+        uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
     };
     void rejestracjaUzytkownika();
     void logowanieUzytkownika();
-    void zmianaHaslaUzytkownika(vector <Uzytkownik> uzytkownicy, int idZalogowanegoUzytkownika);
+    void zmianaHaslaUzytkownika(int idZalogowanegoUzytkownika);
     void wylogowanieUzytkownika();
     Uzytkownik podajDaneNowegoUzytkownika();
     void wypiszWszystkichUzytkownikow();
@@ -40,7 +40,7 @@ public:
 
 private:
 
-int pobierzIdNowegoUzytkownika();
+    int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin (string login);
 
 };

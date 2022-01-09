@@ -10,6 +10,7 @@ using namespace std;
 class KsiazkaAdresowa
 {
     UzytkownikManager uzytkownikManager;
+    MetodyPomocnicze metodyPomocnicze;
     AdresatManager *adresatManager;
     const string NAZWA_PLIKU_Z_ADRESATAMI;
 
@@ -32,6 +33,10 @@ public:
     void wylogowanieUzytkownika();
     void dodanieAdresata(int idZalogowanegoUzytkownika);
     void wyswietlWszystkichAdresatow();
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
+    void usunWybranegoAdresata();
+    void edytujDaneAdresata();
     void wczytajMenu();
     char wybierzOpcjeZMenuGlownego();
 

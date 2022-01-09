@@ -75,8 +75,6 @@ int UzytkownikManager::pobierzIdNowegoUzytkownika()
         return uzytkownicy.back().pobierzId() + 1;
 }
 
-
-
 string UzytkownikManager::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik)
 {
     string liniaZDanymiUzytkownika="";
@@ -120,7 +118,7 @@ void UzytkownikManager::logowanieUzytkownika()
         cout << "Nie udalo sie zalogowac Uzytkownika"<<endl;
     }
 }
-void UzytkownikManager::zmianaHaslaUzytkownika(vector <Uzytkownik> uzytkownicy, int idZalogowanegoUzytkownika)
+void UzytkownikManager::zmianaHaslaUzytkownika(int idZalogowanegoUzytkownika)
 {
     string stareHaslo, noweHaslo, noweHasloPowtorzenie;
     int iloscProb=0,zmiennaPorzadkowZalogowanegoUzytkownika;

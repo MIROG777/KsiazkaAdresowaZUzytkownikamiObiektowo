@@ -33,8 +33,16 @@ public:
     };
     void dodanieAdresata(int ID_ZALOGOWANEGO_UZYTKOWNIKA);
     void wyswietlWszystkichAdresatow(int ID_ZALOGOWANEGO_UZYTKOWNIKA);
+    void wyszukajAdresatowPoImieniu(int ID_ZALOGOWANEGO_UZYTKOWNIKA);
+    void wyszukajAdresatowPoNazwisku(int ID_ZALOGOWANEGO_UZYTKOWNIKA);
+    void usunWybranegoAdresata(int ID_ZALOGOWANEGO_UZYTKOWNIKA);
     string zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(Adresat adresat);
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
+    void zmienImie(int idDoZmainyDanychAdresata);
+    void zmienNazwisko(int idDoZmainyDanychAdresata);
+    void zmienEmail(int idDoZmainyDanychAdresata);
+    void zmienAdres(int idDoZmainyDanychAdresata);
+
 private:
 
     int pobierzIdNowegoAdresata();
