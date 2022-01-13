@@ -113,7 +113,7 @@ Adresat PlikZAdresatami::pobierzDaneAdresata(string daneJednegoAdresataOddzielon
     return adresat;
 }
 
-void PlikZAdresatami::ZmienDaneAdresataWPliku(vector <Adresat>adresaci)
+void PlikZAdresatami::zmienDaneAdresataWPliku(vector <Adresat>adresaci)
 {
     fstream plikTekstowy;
     string liniaZDanymiAdresata = "";
@@ -125,7 +125,7 @@ void PlikZAdresatami::ZmienDaneAdresataWPliku(vector <Adresat>adresaci)
         {
             liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(adresaci[i]);
 
-            if(czyPlikTekstowyJestPusty(plikTekstowy) == true)
+            if(czyPlikJestPusty() == true)
             {
                 plikTekstowy << liniaZDanymiAdresata;
             }

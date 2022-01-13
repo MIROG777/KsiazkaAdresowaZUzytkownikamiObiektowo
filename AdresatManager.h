@@ -42,11 +42,12 @@ public:
     void zmienNazwisko(int idDoZmainyDanychAdresata);
     void zmienEmail(int idDoZmainyDanychAdresata);
     void zmienAdres(int idDoZmainyDanychAdresata);
+    void zaktualizujAdresatow(vector <Adresat> adresaci);
 
 private:
 
     int pobierzIdNowegoAdresata();
-    string wczytajLinie();
+    //string wczytajLinie();
 };
 #endif
 

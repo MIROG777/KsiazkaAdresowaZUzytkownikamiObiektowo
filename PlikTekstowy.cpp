@@ -4,12 +4,12 @@
 //using namespace std;
 
 
-string pobierzNazwePliku()
+string PlikTekstowy::pobierzNazwePliku()
     {
         return NAZWA_PLIKU;
     }
 
-    bool czyPlikJestPusty()
+    bool PlikTekstowy::czyPlikJestPusty()
     {
         bool pusty = true;
         fstream plikTekstowy;

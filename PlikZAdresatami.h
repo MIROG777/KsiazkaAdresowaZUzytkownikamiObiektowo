@@ -22,11 +22,11 @@ public:
     bool dopiszAdresataDoPliku(Adresat adresat);
     string zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(Adresat adresat);
     vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
-    void ZmienDaneAdresataWPliku(vector <Adresat>adresaci);
+    void zmienDaneAdresataWPliku(vector <Adresat>adresaci);
     //void wyczyscPlik();
 
 private:
-    bool czyPlikTekstowyJestPusty(fstream &plikTekstowy);
+    //bool czyPlikTekstowyJestPusty(fstream &plikTekstowy);
     Adresat pobierzDaneAdresata(string daneJednegoAdresataOddzielonePionowymiKreskami, int idZalogowanegoUzytkownika);
 
 

@@ -14,15 +14,7 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(vector <Uzytkownik> uzytkownic
         for(int i=0; i<uzytkownicy.size(); i++)
         {
             liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownicy[i]);
-
-            if(czyPlikJestPusty() == true)
-            {
-                plikTekstowy << liniaZDanymiUzytkownika;
-            }
-            else
-            {
-                plikTekstowy<<endl<<liniaZDanymiUzytkownika;
-            }
+                plikTekstowy << liniaZDanymiUzytkownika<<endl;
         }
         plikTekstowy.close();
     }

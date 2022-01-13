@@ -53,7 +53,6 @@ void AdresatManager:: dodanieAdresata(int idZalogowanegoUzytkownika)
 
 
 }
-
 Adresat AdresatManager::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
@@ -80,9 +79,6 @@ Adresat AdresatManager::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
 
     return adresat;
 }
-
-
-
 int AdresatManager::pobierzIdNowegoAdresata()
 {
     if (adresaci.empty() == true)
@@ -115,37 +111,42 @@ void AdresatManager::wyszukajAdresatowPoImieniu(int ID_ZALOGOWANEGO_UZYTKOWNIKA)
     string imie;
     cout<<"Podaj imie adresatow ktorych chcesz wyszukac: ";
     imie=metodyPomocnicze.wczytajLinie();
+    imie =metodyPomocnicze.zamienPierwszaLitereNaWielkaAPozostaleNaMale(imie);
     for(int i=0; i<adresaci.size(); i++)
     {
         if (adresaci[i].pobierzImie()==imie && adresaci[i].pobierzIdOdUzytkownika()==ID_ZALOGOWANEGO_UZYTKOWNIKA)
         {
-            cout<<endl<<"Id: "<<adresaci[i].pobierzId()<<endl;
+            cout<<endl<<endl<<"Id: "<<adresaci[i].pobierzId()<<endl;
             cout<<"Id Uzytkownika: "<<adresaci[i].pobierzIdOdUzytkownika()<<endl;
             cout<<"Imie: "<<adresaci[i].pobierzImie()<<endl;
             cout<<"Nazwisko: "<<adresaci[i].pobierzNazwisko()<<endl;
             cout<<"Email: "<<adresaci[i].pobierzEmail()<<endl;
             cout<<"Adres: "<<adresaci[i].pobierzAdres()<<endl;
+
         }
     }
+    system("PAUSE");
 }
-
 void AdresatManager::wyszukajAdresatowPoNazwisku(int ID_ZALOGOWANEGO_UZYTKOWNIKA)
 {
     string nazwisko;
     cout<<"Podaj nazwisko adresatow ktorych chcesz wyszukac: ";
     nazwisko=metodyPomocnicze.wczytajLinie();
+    nazwisko = metodyPomocnicze.zamienPierwszaLitereNaWielkaAPozostaleNaMale(nazwisko);
     for(int i=0; i<adresaci.size(); i++)
     {
         if (adresaci[i].pobierzNazwisko()==nazwisko && adresaci[i].pobierzIdOdUzytkownika()==ID_ZALOGOWANEGO_UZYTKOWNIKA)
         {
-            cout<<endl<<"Id: "<<adresaci[i].pobierzId()<<endl;
+            cout<<endl<<endl<<"Id: "<<adresaci[i].pobierzId()<<endl;
             cout<<"Id Uzytkownika: "<<adresaci[i].pobierzIdOdUzytkownika()<<endl;
             cout<<"Imie: "<<adresaci[i].pobierzImie()<<endl;
             cout<<"Nazwisko: "<<adresaci[i].pobierzNazwisko()<<endl;
             cout<<"Email: "<<adresaci[i].pobierzEmail()<<endl;
             cout<<"Adres: "<<adresaci[i].pobierzAdres()<<endl;
+
         }
     }
+    system("PAUSE");
 }
 void AdresatManager::usunWybranegoAdresata(int ID_ZALOGOWANEGO_UZYTKOWNIKA)
 {
@@ -161,6 +162,7 @@ void AdresatManager::usunWybranegoAdresata(int ID_ZALOGOWANEGO_UZYTKOWNIKA)
         if (adresaci.size()==1)
         {
             adresaci.clear();
+            plikZAdresatami.zmienDaneAdresataWPliku(adresaci);
         }
         else if(adresaci.size()>1)
             for(int i=0; i<=adresaci.size(); i++)
@@ -171,6 +173,7 @@ void AdresatManager::usunWybranegoAdresata(int ID_ZALOGOWANEGO_UZYTKOWNIKA)
 
                     liczbaPorzadkowaDlaUsunieciaAdresata=i;
                     adresaci.erase(adresaci.begin()+liczbaPorzadkowaDlaUsunieciaAdresata);
+                    plikZAdresatami.zmienDaneAdresataWPliku(adresaci);
                 }
             }
 
@@ -190,9 +193,9 @@ void  AdresatManager::zmienImie(int idDoZmainyDanychAdresata)
     }
 
     cout << "Podaj nowe imie: ";
-    adresaci[liczbaPorzadkowaDoZmianyDanychAdresata].ustawImie(metodyPomocnicze.wczytajLinie());
+    adresaci[liczbaPorzadkowaDoZmianyDanychAdresata].ustawImie(metodyPomocnicze.zamienPierwszaLitereNaWielkaAPozostaleNaMale(metodyPomocnicze.wczytajLinie()));
+    plikZAdresatami.zmienDaneAdresataWPliku(adresaci);
 }
-
 void  AdresatManager::zmienNazwisko(int idDoZmainyDanychAdresata)
 {
     int liczbaPorzadkowaDoZmianyDanychAdresata=0;
@@ -206,9 +209,9 @@ void  AdresatManager::zmienNazwisko(int idDoZmainyDanychAdresata)
     }
 
     cout << "Podaj nowe nazwisko: ";
-    adresaci[liczbaPorzadkowaDoZmianyDanychAdresata].ustawNazwisko(metodyPomocnicze.wczytajLinie());
+    adresaci[liczbaPorzadkowaDoZmianyDanychAdresata].ustawNazwisko(metodyPomocnicze.zamienPierwszaLitereNaWielkaAPozostaleNaMale(metodyPomocnicze.wczytajLinie()));
+    plikZAdresatami.zmienDaneAdresataWPliku(adresaci);
 }
-
 void  AdresatManager::zmienEmail(int idDoZmainyDanychAdresata)
 {
     int liczbaPorzadkowaDoZmianyDanychAdresata=0;
@@ -223,6 +226,7 @@ void  AdresatManager::zmienEmail(int idDoZmainyDanychAdresata)
 
     cout << "Podaj nowy email: ";
     adresaci[liczbaPorzadkowaDoZmianyDanychAdresata].ustawEmail(metodyPomocnicze.wczytajLinie());
+    plikZAdresatami.zmienDaneAdresataWPliku(adresaci);
 }
 void  AdresatManager::zmienAdres(int idDoZmainyDanychAdresata)
 {
@@ -238,7 +242,9 @@ void  AdresatManager::zmienAdres(int idDoZmainyDanychAdresata)
 
     cout << "Podaj nowy adres: ";
     adresaci[liczbaPorzadkowaDoZmianyDanychAdresata].ustawAdres(metodyPomocnicze.wczytajLinie());
+    plikZAdresatami.zmienDaneAdresataWPliku(adresaci);
 }
+
 
 
 
