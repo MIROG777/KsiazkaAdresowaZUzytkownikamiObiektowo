@@ -45,6 +45,7 @@ string PlikZAdresatami::zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKresk
     liniaZDanymiAdresata += MetodyPomocnicze::konwersjaIntNaString(adresat.pobierzIdOdUzytkownika())+'|';
     liniaZDanymiAdresata += adresat.pobierzImie()+'|';
     liniaZDanymiAdresata += adresat.pobierzNazwisko() + '|';
+    liniaZDanymiAdresata += adresat.pobierzNumerTelefonu() + '|';
     liniaZDanymiAdresata += adresat.pobierzAdres() + '|';
     liniaZDanymiAdresata += adresat.pobierzEmail() + '|';
     return liniaZDanymiAdresata;
@@ -100,9 +101,12 @@ Adresat PlikZAdresatami::pobierzDaneAdresata(string daneJednegoAdresataOddzielon
                 adresat.ustawNazwisko(pojedynczaDanaAdresata);
                 break;
             case 5:
-                adresat.ustawAdres(pojedynczaDanaAdresata);
+                adresat.ustawNumerTelefonu(pojedynczaDanaAdresata);
                 break;
             case 6:
+                adresat.ustawAdres(pojedynczaDanaAdresata);
+                break;
+            case 7:
                 adresat.ustawEmail(pojedynczaDanaAdresata);
                 break;
             }
@@ -125,14 +129,8 @@ void PlikZAdresatami::zmienDaneAdresataWPliku(vector <Adresat>adresaci)
         {
             liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(adresaci[i]);
 
-            if(czyPlikJestPusty() == true)
-            {
-                plikTekstowy << liniaZDanymiAdresata;
-            }
-            else
-            {
-                plikTekstowy<<endl<<liniaZDanymiAdresata;
-            }
+                plikTekstowy << liniaZDanymiAdresata<<endl;
+
         }
         plikTekstowy.close();
     }
