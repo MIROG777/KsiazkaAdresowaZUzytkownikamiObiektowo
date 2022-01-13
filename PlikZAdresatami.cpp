@@ -129,7 +129,7 @@ void PlikZAdresatami::zmienDaneAdresataWPliku(vector <Adresat>adresaci)
         {
             liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(adresaci[i]);
 
-                plikTekstowy << liniaZDanymiAdresata<<endl;
+            plikTekstowy << liniaZDanymiAdresata<<endl;
 
         }
         plikTekstowy.close();

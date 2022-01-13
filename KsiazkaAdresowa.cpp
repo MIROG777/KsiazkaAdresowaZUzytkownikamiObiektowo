@@ -166,7 +166,7 @@ void KsiazkaAdresowa::wczytajMenu()
         }
         else
         {
-             system("cls");
+            system("cls");
             cout<<"<<<<<<MENU ADRESATOW>>>>>>>"<<endl;
             cout<<"1. Dodaj Adresata " <<endl;
             cout<<"2. Wyswietl wszystkich adresatow"<<endl;

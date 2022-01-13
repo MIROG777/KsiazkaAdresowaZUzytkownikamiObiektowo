@@ -26,6 +26,7 @@ void AdresatManager::wyswietlWszystkichAdresatow(int idZalogowanegoUzytkownika)
             cout << "Id: "<<adresaci[i].pobierzId() <<endl;
             cout << "Imie: "<<adresaci[i].pobierzImie() <<endl;
             cout << "Nazwisko: "<<adresaci[i].pobierzNazwisko() <<endl;
+            cout << "Numer Telefonu: "<<adresaci[i].pobierzNumerTelefonu() <<endl;
             cout << "Adres: "<<adresaci[i].pobierzAdres() <<endl;
             cout << "Email: "<<adresaci[i].pobierzEmail() <<endl;
 
@@ -120,6 +121,7 @@ void AdresatManager::wyszukajAdresatowPoImieniu(int ID_ZALOGOWANEGO_UZYTKOWNIKA)
             cout<<"Id Uzytkownika: "<<adresaci[i].pobierzIdOdUzytkownika()<<endl;
             cout<<"Imie: "<<adresaci[i].pobierzImie()<<endl;
             cout<<"Nazwisko: "<<adresaci[i].pobierzNazwisko()<<endl;
+            cout<<"Numer Telefonu: "<<adresaci[i].pobierzNumerTelefonu()<<endl;
             cout<<"Email: "<<adresaci[i].pobierzEmail()<<endl;
             cout<<"Adres: "<<adresaci[i].pobierzAdres()<<endl;
 
@@ -141,6 +143,7 @@ void AdresatManager::wyszukajAdresatowPoNazwisku(int ID_ZALOGOWANEGO_UZYTKOWNIKA
             cout<<"Id Uzytkownika: "<<adresaci[i].pobierzIdOdUzytkownika()<<endl;
             cout<<"Imie: "<<adresaci[i].pobierzImie()<<endl;
             cout<<"Nazwisko: "<<adresaci[i].pobierzNazwisko()<<endl;
+            cout<<"Numer Telefonu: "<<adresaci[i].pobierzNumerTelefonu()<<endl;
             cout<<"Email: "<<adresaci[i].pobierzEmail()<<endl;
             cout<<"Adres: "<<adresaci[i].pobierzAdres()<<endl;
 
